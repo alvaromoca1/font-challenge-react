@@ -1,0 +1,33 @@
+.app__sidebar {
+    overflow: hidden;
+    width: 210px;
+    height: 100vh;
+    float: left;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+
+  }
+  .app__slidebar-nav__item{
+    border: 0px none;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    padding: 10px 16px 10px 24px;
+    color: rgb(97, 97, 97);
+    border-radius: 12px;
+    width: 70%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+  }
+  .app__slidebar-nav__item svg{
+      margin: 0 8px 0 0;
+  }
+  .app__slidebar-nav__item:hover{
+    color: rgb(94, 53, 177);
+    background-color: rgb(237, 231, 246);
+  }

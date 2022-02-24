@@ -20,3 +20,13 @@ export const RegisterClient=(name,lastName,birthDay)=>{
             throw err;
         });
 }
+export const Average =()=>{
+    return axios.get(`${process.env.REACT_APP_URL_BACKEND}/client/average`)
+        .then(response=>{
+            return response.data;
+        })
+        .catch(err => {
+            console.log(err);
+            throw err;
+    });
+}

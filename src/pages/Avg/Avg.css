@@ -16,20 +16,3 @@
 .app__client-form_header_subtitle{
     font-size: 13px;
 }
-.app_client-modal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: #fff;
-    /* bgcolor: 'background.paper', */
-    border-radius:3px;
-    box-shadow: 24px;
-    padding: 20px;
-}
-@media screen and (max-width: 850px) {
-    .app_client-modal{
-        width: 80%;
-    }
-}

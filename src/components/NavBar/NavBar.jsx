@@ -5,13 +5,13 @@ import './NavBar.css';
 
 const NavBar = () => (
   <div className="app__sidebar">
-      <a className='app__slidebar-nav__item' href="#"> 
+      <a className='app__slidebar-nav__item' href="/"> 
         <PersonOutlineIcon/>
-        Client
+        <span className='app__slider-menu'>Client</span>
       </a>
-      <a className='app__slidebar-nav__item' href="#">
+      <a className='app__slidebar-nav__item' href="/avg">
         <CalculateIcon/>  
-        Promedio
+        <span className='app__slider-menu'>Promedio</span>
       </a>
   </div>
 );

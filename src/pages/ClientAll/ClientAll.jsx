@@ -20,7 +20,7 @@ import './ClientAll.css';
 const ClientAll = () => {
   const navigate = useNavigate();
     const[state,setState]= useState({
-        clientsData:[],error:"",value:"",names:"",lastName:"",birthday:new Date('2014-08-18T21:11:54')
+        clientsData:[],error:"",value:"",names:"",lastName:"",birthday:new Date('2000-08-18T21:11:54')
     });
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -69,24 +69,13 @@ const ClientAll = () => {
       }
       
   };
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    borderRadius:3,
-    boxShadow: 24,
-    p: 2,
-  };
   return(
       <div>
         <NavBar/>
         <div className='app__container'>
           <div className='app__client-card' style={{display:"flex",justifyContent: "space-between"}}>
             <div>
-              <h3>Clients</h3>
+              <h3>Clientes</h3>
               <span>Te mostramos la lista de clientes</span>
             </div>
             <Button size="large" color="primary" variant="contained" onClick={handleOpen}><AddIcon/>cliente</Button>
@@ -126,7 +115,7 @@ const ClientAll = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style} component="form" onSubmit={doRegisterClient}>
+                <Box className="app_client-modal" component="form" onSubmit={doRegisterClient}>
                     <div className="app__client-form_header">
                         <span className="app__client-form_header_title">Comencemos!!</span>
                         <span className="app__client-form_header_subtitle">Listo para agregar un nuevo usuario!</span>

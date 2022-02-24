@@ -31,3 +31,11 @@
     color: rgb(94, 53, 177);
     background-color: rgb(237, 231, 246);
   }
+  @media screen and (max-width: 850px) {
+    .app__sidebar {
+      width: 52px;
+    }
+    .app__slider-menu{
+      display: none;
+    }
+  }

@@ -9,3 +9,8 @@
   margin-left: 218px;
   padding: 10px;
 }
+@media screen and (max-width: 850px) {
+  .app__container{
+    margin-left: 53px;
+  }
+}

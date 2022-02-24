@@ -12,22 +12,10 @@ import AddIcon from '@mui/icons-material/Add';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import{AllClient} from '../../services/service';
+import{AllClient,RegisterClient} from '../../services/service';
 import { NavBar } from '../../components';
 import './ClientAll.css';
 
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 const ClientAll = () => {
   const navigate = useNavigate();
@@ -55,18 +43,16 @@ const ClientAll = () => {
 
     const doRegisterClient= async(event)=>{
         event.preventDefault();
-        // const data = localStorage.getItem("information");
-        // const {_id} = JSON.parse(data);
-        // handleClose();
-        // await RegisterProject(state.nombre,state.categoria,_id,state.encargados)
-        //     .then(
-        //         ()=>{
-        //             setState({...state,value: "on"});
-        //         },
-        //         error => {
-        //             setState({error: "Al parecer ocurrio un error verifique su informacion, gracias",alerta:true});
-        //         }
-        //     );
+        handleClose();
+        await RegisterClient(state.names,state.lastName,state.birthday)
+            .then(
+                ()=>{
+                    setState({...state,value: "on"});
+                },
+                error => {
+                    setState({error: "Al parecer ocurrio un error verifique su informacion, gracias",alerta:true});
+                }
+            );
     }
 
     const changeHandler = (event) => {
@@ -113,7 +99,6 @@ const ClientAll = () => {
                     <TableCell>Nombres</TableCell>
                     <TableCell align="right">Apellidos</TableCell>
                     <TableCell align="right">Nacimento</TableCell>
-                    <TableCell align="right">Edad</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -126,8 +111,7 @@ const ClientAll = () => {
                         {client.name}
                       </TableCell>
                       <TableCell align="right">{client.lastName}</TableCell>
-                      <TableCell align="right">{client.birthDay}</TableCell>
-                      <TableCell align="right">9</TableCell>
+                      <TableCell align="right">{new Date(client.birthDay).toLocaleDateString()}</TableCell>
                     </TableRow>
                 ))}
                   

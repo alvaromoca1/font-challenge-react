@@ -10,3 +10,13 @@ export const AllClient =()=>{
             throw err;
     });
 }
+export const RegisterClient=(name,lastName,birthDay)=>{
+    return axios.post(`${process.env.REACT_APP_URL_BACKEND}/client`,{name,lastName,birthDay})
+        .then(response=>{
+            return response.data;
+        })
+        .catch(err => {
+            console.log(err);
+            throw err;
+        });
+}

@@ -1,0 +1,18 @@
+.app__client-card{
+    background: #fff;
+    padding: 20px 20px;
+    margin:  11px 20px 20px 20px;
+    border-radius: 10px;
+}
+.app__client-form_header{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.app__client-form_header_title{
+    font-size: 20px;
+    font-weight: 700;
+}
+.app__client-form_header_subtitle{
+    font-size: 13px;
+}
